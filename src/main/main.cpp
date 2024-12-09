@@ -21,6 +21,7 @@
 #include "base/configuration.h"
 #include "main/command_executor.h"
 #include "options/option_exception.h"
+#include "base/output.h"
 
 using namespace cvc5::internal;
 using namespace cvc5::main;
@@ -30,6 +31,10 @@ using namespace cvc5::main;
  */
 int main(int argc, char* argv[])
 {
+  cvc5::internal::TraceChannel.on("regexp-derive");
+  // cvc5::internal::TraceChannel.on("cmd-exec");
+  // cvc5::internal::TraceChannel.on("lexer-debug");
+  // cvc5::internal::TraceChannel.on("parser");
   cvc5::TermManager tm;
   std::unique_ptr<cvc5::Solver> solver = std::make_unique<cvc5::Solver>(tm);
   try

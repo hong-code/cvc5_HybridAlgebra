@@ -15,5 +15,5 @@ generated/
 /deps/
 .vscode
 *.pyc
-
+/intersection
 
